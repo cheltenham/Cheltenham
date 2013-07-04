@@ -81,3 +81,7 @@ table {
 .tr-odd {
 	background-color: #f8f8f8;
 }
+
+dt {
+	font-size: 0.8em;
+}

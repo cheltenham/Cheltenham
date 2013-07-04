@@ -1051,8 +1051,29 @@
 
 
 				<!-- Directory -->
-				<div id="divDirectory" class="hide span9 content-container">
-					[PROTECTED CONTENT]
+				<div id="divDirectory" class="hide hero-unit span9 content-container">
+					<h2>Cheltenham Resident Directory</h2>
+					<div id="directoryAccess" class="form-horizontal alert alert-danger">
+						<p>The directory is password protected.  Please enter your credentials:</p>
+						<br/>
+						<div class="control-group">
+							<label class="control-label" for="inputUsername">Username:</label>
+							<div class="controls">
+								<input type="text" id="inputUsername" placeholder="Username">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputPassword">Password:</label>
+							<div class="controls">
+								<input type="password" id="inputPassword" placeholder="Password">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button class="btn btn-danger" onclick="fetchDirectory($('#inputUsername').val(), $('#inputPassword').val());">Download Directory</button>
+							</div>
+						</div>
+					</div>
 				</div>
 
 
@@ -1331,6 +1352,7 @@
 		<script src="js/bootstrap-carousel.js"></script>
 		<script src="js/bootstrap-typeahead.js"></script>
 		<script src="js/cheltenham.js"></script>
+		<script src="js/sha256.js"></script>
 
 	</body>
 
