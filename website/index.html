@@ -31,7 +31,7 @@
 		<link rel="shortcut icon" href="ico/favicon.png">
 	</head>
 
-	<body>
+	<body onload="styleTableRows();">
 
 		<!-- Floating title bar -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -123,7 +123,7 @@
 					<hr/>
 					<div class="row-fluid">
 						<table class="table table-bordered">
-							<tr class="tr-odd">
+							<tr>
 								<td class="table-label">Construction Began:</td>
 								<td class="table-data">1989</td>
 								<td class="table-label">Construction Finished:</td>
@@ -135,7 +135,7 @@
 								<td class="table-label"># of Homes:</td>
 								<td class="table-data">157</td>
 							</tr>
-							<tr class="tr-odd">
+							<tr>
 								<td class="table-label"># of Entrances:</td>
 								<td class="table-data">3</td>
 								<td class="table-label"># of Entrances from Major Roads:</td>
@@ -147,7 +147,7 @@
 								<td class="table-label"># of Retention Ponds:</td>
 								<td class="table-data">1</td>
 							</tr>
-							<tr class="tr-odd">
+							<tr>
 								<td class="table-label">Distance to I-675:</td>
 								<td class="table-data">1/2 mile</td>
 								<td class="table-label">Distance to I-75:</td>
@@ -487,80 +487,211 @@
 
 
 				<!-- Contractors -->
-				<div id="divContractors" class="hide span9 content-container">
-					Cheltenham Homeowners AssociationCenterville, Montgomery County, Ohio...a great place to call home....HomePhotosWomen's GroupClaudia's Book ClubDirectory of ResidentsContractorsCalendarNewsAbout UsFAQSAssociation CovenantsAssociation MinutesArchived MinutesLinksContact Us
-					Contractors Mentioned by our Neighbors
+				<div id="divContractors" class="hide hero-unit span9 content-container">
+					<h2>Contractors Mentioned by our Neighbors</h2>
+					<p>Here is a list of contractors recommended by individual homeowners.  This list has been compiled solely based on mentions by our neighbors and does not represent an endorsement of the contractor by the homeowners association or an endorsement of the quality of their work.  If you've had good experiences with contractors, let us know!</p>
+					<br/>
+					<h4>Appliance Service:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Logan Master Appliances</td>
+								<td>(937) 252-5000<br/><a href="http://www.loganmasterappliance.com/" target="_blank">loganmasterappliance.com</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
 
-					Here is a list of contractors recommended by individual homeowners.  This list has been compiled solely based on mentions by our neighbors and does not represent an endorsement of the contractor by the homeowners association or an endorsement of the quality of their work.  If you've had good experiences with contractors, let us know!
+					<br/>
+					<h4>Cabinets:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Josh Cohen</td>
+								<td>(937) 789-8694</td>
+								<td>Outstanding wood worker and cabinet maker who works for John Abrecht Fine Homes but is now taking other carpentry jobs as well.  Two Cheltenham homeowners think he's great!</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Carpet/Flooring:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Bockrath Carpet &amp; Flooring</td>
+								<td>(937) 438-0870<br/><a href="http://www.bockrathcarpet.com/" target="_blank">bockrathcarpet.com</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Carpet House</td>
+								<td>(937) 294-8378<br/><a href="http://www.carpethouseohio.com/" target="_blank">carpethouseohio.com</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Innovative Floors</td>
+								<td>(937) 848-7200<br/><a href="http://www.innovativefloordesign.com/" target="_blank">innovativefloordesign.com</a></td>
+								<td>They're just east of Wilmington on Alex Bell Road, a block before Huntington Bank on the right.</td>
+							</tr>
+							<tr>
+								<td>McSwain</td>
+								<td><a href="http://www.mcswaincarpets.com/" target="_blank">mcswaincarpets.com</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Carpet Cleaning:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Perfection Carpet Cleaning</td>
+								<td>(937) 299-1256<br/>(937) 235-1150<br/><a href="http://www.perfection-carpet.com/" target="_blank">perfection-carpet.com</a></td>
+								<td>Ask for Bob and say Melissa Lush recommended you.  This company is great. They get our older, and very light carpet, looking great time after time with $$ that is always competitive.</td>
+							</tr>
+							<tr>
+								<td>Johnny's Carpet Cleaning</td>
+								<td>(937) 426-6130<br/><a href="http://www.johnnyscarpetcleaning.com/" target="_blank">johnnyscarpetcleaning.com</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Kirk's Carpet Cleaning</td>
+								<td>(937) 426-5772<br/></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Computer Repair:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ryan Moore</td>
+								<td>(937) 524-9051<br/><a href="mailto:whiteshark81@gmail.com">whiteshark81@gmail.com</a></td>
+								<td>He's the son of a Cheltenham resident.  His father says he has never met a computer problem he couldn't solve.</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Deck Cleaning:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Deck Renewal Systems</td>
+								<td>(937) 434-3256<br/><a href="http://www.deckrenewalsystems.com/" target="_blank">deckrenewalsystems.com</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Drywall Repair:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Magic Drywall</td>
+								<td>(937) 270-7324</td>
+								<td>Excellent quality and service.  We had major drywall damage from a roof leak.  Their ceiling repairs were PERFECT.  We also had them do some wall and ceiling work in the basement.  Amazingly quick and cheap.  They also have a painter on staff who does amazing touch-ups quickly and cheaply.</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Duct Cleaning:</h4>
+					<table class="table table-bordered">
+						<thead>
+						<tr>
+							<th>Contractor&nbsp;/&nbsp;Company</th>
+							<th>Contact&nbsp;Information</th>
+							<th>Comments</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Sears Duct Cleaning</td>
+							<td><a href="http://searsclean.com/" target="_blank">searsclean.com</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Southtown Heating & Cooling</td>
+							<td>(937) 298-4200<br/><a href="http://southtownheatingcooling.com/" target="_blank">southtownheatingcooling.com</a></td>
+							<td>Mention Karen Posey's name and receive discount</td>
+						</tr>
+						</tbody>
+					</table>
+
+					<br/>
+					<h4>Pest Control:</h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Contractor&nbsp;/&nbsp;Company</th>
+								<th>Contact&nbsp;Information</th>
+								<th>Comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Bugs or Us<br/>(Ken Packard)</td>
+								<td>(937) 432-0002<br/><a href="http://www.daytonohpestcontrol.com/" target="_blank">daytonohpestcontrol.com</a></td>
+								<td>You're close to the "bug belt" here.  We've experienced mainly water bugs, but this guy can help with anything from ants to termites.  It's about $40 per visit for quarterly service.  We do monthly because we don't like bugs.</td>
+							</tr>
+						</tbody>
+					</table>
 
 
-					Appliance Service:
-
-					Logan Master Appliances                      252-5000
-
-					Bathroom Remodeling (See General Contracting)
-
-					Bugs:
-
-					Bugs or Us, Ken Packard                       254-000
-
-					You’re close to the “bug belt” here.  We’ve experienced mainly water bugs, but this guy can help with anything from ants to termites.  It’s about $40 per visit for quarterly service.  We do monthly because we don’t like bugs.
-
-					Cabinet Makers (also see General Contracting):
-
-					Josh Cohen                                          789-8694      cohen03@juno.com
-
-					Outstanding wood worker and cabinet maker who works for John Abrecht Fine Homes but is now taking other carpentry jobs as well.  Two Cheltenham homeowners think he's great!!
-
-					Carpet / Flooring:
-
-					Innovative Floors                                   848-7200
-
-					They’re just east of Wilmington on Alex Bell Road, a block before Huntington Bank on the right.
-
-					Bockrath Carpet & Flooring (Jerry)         438-0870
-
-					McSwain                                              ?
-
-					Carpet House (Sam Leathy)                  294-8378
-
-					Carpet Cleaning:
-
-					Perfection Carpet Cleaning                    299-1256 or 235-1150
-
-					Ask for Bob and say Melissa Lush recommended you.  This company is great. They get our older, and very light carpet, looking great time after time with $$ that is always competitive.
-
-					Johnny's Carpets                                 426-6130
-
-					Kirk's Carpet Cleaning                          426-5772
-
-					Computer Repair:
-
-					Ryan Moore                                        524-9051  whiteshark81@gmail.com
-
-					He's the son of a Cheltenham resident.  His father says he has never met a computer problem he couldn't solve.
-
-
-					Contractors (see General Contracting)
-
-					Deck Cleaning:
-
-					Deck Cleaning - Deck Renewal Systems  434-3256
-
-					Drywall Repair:
-
-					Magic Drywall, Jon                               270-7324
-
-					Excellent quality and service.  We had major drywall damage from a roof leak.  Their ceiling repairs were PERFECT.  We also had them do some wall and ceiling work in the basement.  Amazingly quick and cheap.  They also have a painter on staff who does amazing touch-ups quickly and cheaply.
-
-					Duct Cleaning:
-
-					Sears Duct Cleaning                             http://searsclean.com/airduct.asp
-
-
-					Southtown Heating & Cooling                298-4200
-
-					(mention Karen Posey's name and receive discount)
 
 					McAfee                                                ?
 					Electrician and lighting:
