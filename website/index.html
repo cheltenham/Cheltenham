@@ -1053,9 +1053,8 @@
 				<!-- Directory -->
 				<div id="divDirectory" class="hide hero-unit span9 content-container">
 					<h2>Cheltenham Resident Directory</h2>
-					<div id="directoryAccess" class="form-horizontal alert alert-danger">
-						<p>The directory is password protected.  Please enter your credentials:</p>
-						<br/>
+					<div id="directoryAccess" class="form-horizontal alert alert-info">
+						<p>The directory is password protected.</p>
 						<div class="control-group">
 							<label class="control-label" for="inputUsername">Username:</label>
 							<div class="controls">
@@ -1070,10 +1069,12 @@
 						</div>
 						<div class="control-group">
 							<div class="controls">
-								<button class="btn btn-danger" onclick="fetchDirectory($('#inputUsername').val(), $('#inputPassword').val());">Download Directory</button>
+								<button class="btn btn-primary" onclick="fetchDirectory($('#inputUsername').val(), $('#inputPassword').val());">Access Directory</button>
 							</div>
 						</div>
 					</div>
+					<div id="passwordError" class="hide alert alert-error content-container">Incorrect username or password!</div>
+					<div id="directoryDownload" class="hide alert alert-success content-container"></div>
 				</div>
 
 

@@ -1,5 +1,6 @@
 function showContentContainer(contentContainerId) {
 	$('.content-container').hide();
+	$('#inputPassword').val("");
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
@@ -23,9 +24,15 @@ function validatePassword(password) {
 }
 
 function fetchDirectory(username, password) {
+	var errorDiv = $('#passwordError');
+	var successDiv = $('#directoryDownload');
+	errorDiv.slideUp(200);
+	successDiv.slideUp(200);
+	successDiv.html("");
 	if (!validateUsername(username) || !validatePassword(password)) {
-		alert("Incorrect username or password.");
+		errorDiv.slideDown(300);
 	} else {
-		window.open('doc/directory.pdf', '_blank')
+		successDiv.html("<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>");
+		successDiv.slideDown(300);
 	}
 }
