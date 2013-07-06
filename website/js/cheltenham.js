@@ -34,11 +34,7 @@ function fetchDirectory(username, password) {
 		errorDiv.slideDown(300);
 	} else {
 		$('#directoryAccess').slideUp(200);
-		successDiv.html(
-			"<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>" +
-			"<br/><small class='muted'>(Updated as of April 20, 2013)</small>" +
-			"<br/><br/><small class='muted'>This directory is solely for the use of Cheltenham residents and " +
-			"is not to be used for commercial or solicitation purposes.</small>");
+		successDiv.html("<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>");
 		successDiv.slideDown(300);
 	}
 }
