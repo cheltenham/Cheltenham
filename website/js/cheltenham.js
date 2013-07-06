@@ -5,6 +5,10 @@ function showContentContainer(contentContainerId) {
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
+	$('#landing').slideUp();
+	$('#sidebar').show();
+	$('#navbar-contents').show();
+	$('#footer').hide();
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 

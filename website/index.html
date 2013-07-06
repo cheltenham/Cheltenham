@@ -17,6 +17,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="css/cheltenham.css" rel="stylesheet">
+		<link href="css/landing.css" rel="stylesheet">
 
 		<!-- Support older versions of IE -->
 		<!--[if lt IE 9]>
@@ -36,13 +37,61 @@
 		<!-- Floating title bar -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
-				<div class="container-fluid">
+				<div id="navbar-contents" class="hide container-fluid">
 					<a class="brand" href="index.html">Cheltenham Homeowner's Association</a>
 
 					<div class="nav-collapse collapse">
 						<p class="navbar-text pull-right">
 							Centerville, OH
 						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Landing page -->
+		<div id="landing">
+			<div class="jumbotron masthead">
+				<div class="container">
+					<h1>Welcome home...</h1>
+					<p>to beautiful <strong>Cheltenham</strong></p>
+					<p>
+						<a href="javascript:showContentContainer('About')" class="btn btn-success btn-jumbo">Learn more &raquo;</a>
+					</p>
+					<br/>
+					<ul class="masthead-links">
+						<li>
+							<a href="javascript:showContentContainer('About')">About Us</a>
+						</li>
+						<li>
+							<a href="javascript:showContentContainer('News')">News</a>
+						</li>
+						<li>
+							<a href="javascript:showContentContainer('Photos')">Photos</a>
+						</li>
+						<li>
+							<a href="javascript:showContentContainer('Contact')">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<br/>
+			<div class="row-fluid">
+				<div class="container-fluid span12">
+					<div class="span4 text-center">
+						<h2>Item 1</h2>
+						<p>blah</p>
+						<img src="img/placeholder3.jpg" class="img-circle"/>
+					</div>
+					<div class="span4 text-center">
+						<h2>Item 2</h2>
+						<p>blah</p>
+						<img src="img/placeholder3.jpg" class="img-circle"/>
+					</div>
+					<div class="span4 text-center">
+						<h2>Item 3</h2>
+						<p>blah</p>
+						<img src="img/placeholder3.jpg" class="img-circle"/>
 					</div>
 				</div>
 			</div>
@@ -55,8 +104,8 @@
 			<div class="row-fluid">
 
 				<!-- Sidebar navigation -->
-				<div class="span3">
-					<div class="well sidebar-nav">
+				<div id="sidebar" class="hide span3">
+					<div class="sidebar-nav well">
 						<ul class="nav nav-list">
 							<li class="nav-header">The Neighborhood</li>
 							<li id="liAbout" class="nav-item"><a href="javascript:showContentContainer('About')">About Us</a></li>
@@ -78,19 +127,6 @@
 							<li id="liLinks" class="nav-item"><a href="javascript:showContentContainer('Links')">Links</a></li>
 							<li id="liContact" class="nav-item"><a href="javascript:showContentContainer('Contact')">Contact Us</a></li>
 						</ul>
-					</div>
-				</div>
-
-
-				<!-- Home -->
-				<div id="divHome" class="span9 content-container">
-					<div class="welcome">
-						<div class="row-fluid">
-							<h1>Welcome home</h1>
-							<div class="span6">
-								...to beautiful <strong>Cheltenham</strong>
-							</div>
-						</div>
 					</div>
 				</div>
 
@@ -1327,8 +1363,12 @@
 
 
 			<!-- Footer -->
-			<footer class="hide">
-				<p>&copy; 2013 Cheltenham Neighborhood Association, Montgomery County, Ohio</p>
+			<footer id="footer">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<p class="footer-text text-center">&copy; 2013 Cheltenham Neighborhood Association, Montgomery County, Ohio</p>
 			</footer>
 
 		</div>
