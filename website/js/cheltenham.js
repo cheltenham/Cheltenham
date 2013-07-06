@@ -1,14 +1,10 @@
 function showContentContainer(contentContainerId) {
 	$('.content-container').hide();
+	$('#directoryAccess').show();
 	$('#inputPassword').val("");
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
-}
-
-function styleTableRows() {
-	$("tr:even").addClass("tr-even");
-	$("tr:odd").addClass("tr-odd");
 }
 
 function validateUsername(username) {
@@ -32,7 +28,12 @@ function fetchDirectory(username, password) {
 	if (!validateUsername(username) || !validatePassword(password)) {
 		errorDiv.slideDown(300);
 	} else {
-		successDiv.html("<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>");
+		$('#directoryAccess').slideUp(200);
+		successDiv.html(
+			"<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>" +
+			"<br/><small class='muted'>(Updated as of April 20, 2013)</small>" +
+			"<br/><br/><small class='muted'>This directory is solely for the use of Cheltenham residents and " +
+			"is not to be used for commercial or solicitation purposes.</small>");
 		successDiv.slideDown(300);
 	}
 }
