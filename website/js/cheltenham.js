@@ -61,7 +61,7 @@ function sendMail(recipientEmail, senderEmail, senderName, senderPhone, message)
 		errorDiv.slideDown(300);
 	}
 	else {
-		ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone ? senderPhone : "", message)
+		ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone ? senderPhone : "(not provided)", message)
 	}
 }
 
