@@ -1329,57 +1329,51 @@
 
 
 				<!-- Contact Us -->
-				<div id="divContact" class="hide span9 content-container">
+				<div id="divContact" class="hide hero-unit span9 content-container">
 
-					<form name="contactform" method="post" action="scripts/sendEmailForm.php">
-						<table>
-							<tr>
-								<td>
-									<label for="first_name">First Name *</label>
-								</td>
-								<td>
-									<input  type="text" id="first_name" name="first_name" maxlength="50" size="30">
-								</td>
-							</tr>
-							<tr>
-								<td>
-								<label for="last_name">Last Name *</label>
-								</td>
-								<td>
-									<input  type="text" id="last_name" name="last_name" maxlength="50" size="30">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="email">Email Address *</label>
-								</td>
-								<td>
-									<input  type="text" id="email" name="email" maxlength="80" size="30">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="telephone">Telephone Number</label>
-								</td>
-								<td>
-									<input  type="text" id="telephone" name="telephone" maxlength="30" size="30">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="comments">Comments *</label>
-								</td>
-								<td>
-									<textarea id="comments" name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2" style="text-align:center">
-									<input type="submit" value="Submit">
-								</td>
-							</tr>
-						</table>
-					</form>
+					<h2>Contact Us</h2>
+
+					<div class="form-horizontal alert alert-info">
+						<br/>
+						<div class="control-group">
+							<label class="control-label" for="contactSendTo">Send message to:</label>
+							<div class="controls">
+								<select class="span9" id="contactSendTo" required>
+									<option value="kpolicano+cheltenham@gmail.com">Keith Policano (Website Designer)</option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="contactName">Your Name:</label>
+							<div class="controls">
+								<input class="span9" type="text" id="contactName" placeholder="John Doe" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="contactEmail">Your Email:</label>
+							<div class="controls">
+								<input class="span9" type="email" id="contactEmail" placeholder="jdoe@email.com" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="contactPhone">Your Phone (optional):</label>
+							<div class="controls">
+								<input class="span9" type="tel" id="contactPhone" placeholder="(937) 555-5555">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="contactMessage">Your Message:</label>
+							<div class="controls">
+								<textarea class="span9" rows="6" id="contactMessage" required></textarea>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button class="btn btn-primary" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
+							</div>
+						</div>
+					</div>
+
 					Contact Us
 
 

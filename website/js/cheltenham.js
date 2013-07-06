@@ -3,13 +3,17 @@ function showContentContainer(contentContainerId) {
 	$('#directoryAccess').show();
 	$('#inputPassword').val("");
 	$('.nav-item').removeClass('active');
-	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
 	$('#landing').slideUp();
 	$('#sidebar').show();
 	$('#navbar-contents').show();
 	$('#footer').hide();
+	exposeContentContainer(contentContainerId);
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function exposeContentContainer(contentContainerId) {
+	$('#div' + contentContainerId).show();
 }
 
 function validateUsername(username) {
@@ -36,5 +40,26 @@ function fetchDirectory(username, password) {
 		$('#directoryAccess').slideUp(200);
 		successDiv.html("<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>");
 		successDiv.slideDown(300);
+	}
+}
+
+function sendMail(recipientEmail, senderEmail, senderName, senderPhone, message) {
+	var errorMessage = "";
+	if (!recipientEmail) {
+		errorMessage += "\n• Please select a recipient"
+	}
+	if (!senderEmail) {
+		errorMessage += "\n• Please enter your email address"
+	}
+	if (!senderName) {
+		errorMessage += "\n• Please enter your name"
+	}
+	if (!message) {
+		errorMessage += "\n• Please enter a message"
+	}
+
+	if (errorMessage) {
+		alert ("Error occurred:" + errorMessage);
+		return;
 	}
 }
