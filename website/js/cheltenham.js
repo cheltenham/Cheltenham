@@ -3,17 +3,15 @@ function showContentContainer(contentContainerId) {
 	$('#directoryAccess').show();
 	$('#inputPassword').val("");
 	$('.nav-item').removeClass('active');
+	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
 	$('#landing').slideUp();
 	$('#sidebar').show();
 	$('#navbar-contents').show();
 	$('#footer').hide();
-	exposeContentContainer(contentContainerId);
+	$('#contactUsSuccessContainer').hide();
+	$('#contactUsErrorContainer').hide();
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
-}
-
-function exposeContentContainer(contentContainerId) {
-	$('#div' + contentContainerId).show();
 }
 
 function validateUsername(username) {
@@ -44,22 +42,69 @@ function fetchDirectory(username, password) {
 }
 
 function sendMail(recipientEmail, senderEmail, senderName, senderPhone, message) {
+	var errorDiv = $('#contactUsErrorContainer');
+	errorDiv.slideUp(200);
+	$('#contactUsSuccessContainer').slideUp(200);
+
 	var errorMessage = "";
-	if (!recipientEmail) {
-		errorMessage += "\n• Please select a recipient"
-	}
-	if (!senderEmail) {
-		errorMessage += "\n• Please enter your email address"
-	}
-	if (!senderName) {
-		errorMessage += "\n• Please enter your name"
-	}
-	if (!message) {
-		errorMessage += "\n• Please enter a message"
-	}
+	if (!recipientEmail)
+		errorMessage += "<br/>• Please select a recipient";
+	if (!senderName)
+		errorMessage += "<br/>• Please enter your name";
+	if (!senderEmail)
+		errorMessage += "<br/>• Please enter your email address";
+	if (!message)
+		errorMessage += "<br/>• Please enter a message";
 
 	if (errorMessage) {
-		alert ("Error occurred:" + errorMessage);
-		return;
+		$('#contactUsErrors').html("Could not send message:" + errorMessage);
+		errorDiv.slideDown(300);
+	}
+	else {
+		ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone ? senderPhone : "", message)
+	}
+}
+
+function ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone, message) {
+	try {
+		$('#contactSendTo').prop('disabled', true);
+		$('#contactName').prop('disabled', true);
+		$('#contactEmail').prop('disabled', true);
+		$('#contactPhone').prop('disabled', true);
+		$('#contactMessage').prop('disabled', true);
+
+		$.ajax({
+			type: "POST",
+			url: "scripts/sendEmail.php",
+			data: {
+				recipientEmail: recipientEmail,
+				subject: "Someone has contacted you from cheltenham.cc",
+				senderEmail: senderEmail,
+				senderName: senderName,
+				senderPhone: senderPhone,
+				message: message
+			}
+		}).done(function (result) {
+			var jsonResult = eval("(" + result + ")");
+			if (jsonResult.errors) {
+				$('#contactUsErrors').html(jsonResult.responseMessage);
+				$('#contactUsErrorContainer').slideDown(300);
+			}
+			else {
+				$('#contactUsErrorContainer').slideUp(200);
+				$('#contactUsSuccessContainer').slideDown(300);
+				$('#contactName').val("");
+				$('#contactEmail').val("");
+				$('#contactPhone').val("");
+				$('#contactMessage').val("");
+			}
+			$('#contactSendTo').prop('disabled', false);
+			$('#contactName').prop('disabled', false);
+			$('#contactEmail').prop('disabled', false);
+			$('#contactPhone').prop('disabled', false);
+			$('#contactMessage').prop('disabled', false);
+		});
+	} catch (e) {
+		alert("error: " + e.description);
 	}
 }

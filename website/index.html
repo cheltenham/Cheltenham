@@ -1333,45 +1333,55 @@
 
 					<h2>Contact Us</h2>
 
-					<div class="form-horizontal alert alert-info">
-						<br/>
-						<div class="control-group">
-							<label class="control-label" for="contactSendTo">Send message to:</label>
-							<div class="controls">
-								<select class="span9" id="contactSendTo" required>
-									<option value="kpolicano+cheltenham@gmail.com">Keith Policano (Website Designer)</option>
-								</select>
+					<div class="row-fluid">
+						<div class="form-horizontal alert alert-info">
+							<br/>
+							<div class="control-group">
+								<label class="control-label" for="contactSendTo">Send message to:</label>
+								<div class="controls">
+									<select class="span9" id="contactSendTo" required>
+										<option value="kpolicano+cheltenham@gmail.com">Keith Policano (Website Designer)</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="contactName">Your Name:</label>
+								<div class="controls">
+									<input class="span9" type="text" id="contactName" placeholder="John Doe" required>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="contactEmail">Your Email:</label>
+								<div class="controls">
+									<input class="span9" type="email" id="contactEmail" placeholder="jdoe@email.com" required>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="contactPhone">Your Phone (optional):</label>
+								<div class="controls">
+									<input class="span9" type="tel" id="contactPhone" placeholder="(937) 555-5555">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="contactMessage">Your Message:</label>
+								<div class="controls">
+									<textarea class="span9" rows="6" id="contactMessage" required></textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button class="btn btn-primary" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
+								</div>
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="contactName">Your Name:</label>
-							<div class="controls">
-								<input class="span9" type="text" id="contactName" placeholder="John Doe" required>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="contactEmail">Your Email:</label>
-							<div class="controls">
-								<input class="span9" type="email" id="contactEmail" placeholder="jdoe@email.com" required>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="contactPhone">Your Phone (optional):</label>
-							<div class="controls">
-								<input class="span9" type="tel" id="contactPhone" placeholder="(937) 555-5555">
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="contactMessage">Your Message:</label>
-							<div class="controls">
-								<textarea class="span9" rows="6" id="contactMessage" required></textarea>
-							</div>
-						</div>
-						<div class="control-group">
-							<div class="controls">
-								<button class="btn btn-primary" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
-							</div>
-						</div>
+					</div>
+
+					<div id="contactUsErrorContainer" class="row-fluid content-container">
+						<div id="contactUsErrors" class="alert alert-error"></div>
+					</div>
+
+					<div id="contactUsSuccessContainer" class="row-fluid content-container">
+						<div id="contactUsSuccess" class="alert alert-success">Message sent successfully.</div>
 					</div>
 
 					Contact Us
