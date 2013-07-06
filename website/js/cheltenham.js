@@ -5,6 +5,7 @@ function showContentContainer(contentContainerId) {
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
 function validateUsername(username) {
