@@ -48,6 +48,8 @@ body {
 }
 
 .well {
+	padding-top: 0;
+	padding-bottom: 0;
 	color: #fff;
 	text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
 	background: #1d3b13;
@@ -124,6 +126,12 @@ table {
 
 .table-data {
 	font-weight: bold;
+}
+
+.striped-45 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: url(../img/stripe-45.png) repeat;
 }
 
 /* Desktop */
