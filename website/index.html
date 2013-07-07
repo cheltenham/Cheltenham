@@ -1091,24 +1091,24 @@
 					<div id="directoryAccess" class="form-horizontal alert alert-info">
 						<br/>
 						<div class="control-group">
-							<label class="control-label" for="inputUsername">Username:</label>
+							<label class="control-label" for="directoryUsername">Username:</label>
 							<div class="controls">
-								<input type="text" id="inputUsername" placeholder="Username">
+								<input type="text" id="directoryUsername" placeholder="Username">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputPassword">Password:</label>
+							<label class="control-label" for="directoryPassword">Password:</label>
 							<div class="controls">
-								<input type="password" id="inputPassword" placeholder="Password">
+								<input type="password" id="directoryPassword" placeholder="Password">
 							</div>
 						</div>
 						<div class="control-group">
 							<div class="controls">
-								<button class="btn btn-primary" onclick="fetchDirectory($('#inputUsername').val(), $('#inputPassword').val());">Access Directory</button>
+								<button id="directorySubmit" class="btn btn-primary" onclick="fetchDirectory($('#directoryUsername').val(), $('#directoryPassword').val());">Access Directory</button>
 							</div>
 						</div>
 					</div>
-					<div id="passwordError" class="hide alert alert-error content-container text-center">Incorrect username or password!</div>
+					<div id="passwordError" class="hide alert alert-error content-container text-center"></div>
 					<div id="directoryDownload" class="hide alert alert-success content-container text-center"></div>
 				</div>
 

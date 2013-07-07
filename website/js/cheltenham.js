@@ -1,7 +1,7 @@
 function showContentContainer(contentContainerId) {
 	$('.content-container').hide();
 	$('#directoryAccess').show();
-	$('#inputPassword').val("");
+	$('#directoryPassword').val("");
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
@@ -14,31 +14,58 @@ function showContentContainer(contentContainerId) {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
-function validateUsername(username) {
-	var salt = 'BMiT!V)R++e';
-	var hash = '5f1f7e109c39d4a0691fec571d6d84c679294a655d9dd6293d67f6d511063744';
-	return hash == CryptoJS.SHA256(username + salt).toString();
-}
-
-function validatePassword(password) {
-	var salt = 'ZcEh*3-/{';
-	var hash = '082b9b907c1beb8752e2e5718a50fb3ac5d648b50fb95aa0424e5a9aa8d4f822';
-	return hash == CryptoJS.SHA256(password + salt).toString();
-}
-
 function fetchDirectory(username, password) {
 	var errorDiv = $('#passwordError');
-	var successDiv = $('#directoryDownload');
+	errorDiv.html("");
 	errorDiv.slideUp(200);
-	successDiv.slideUp(200);
+
+	var successDiv = $('#directoryDownload');
 	successDiv.html("");
-	if (!validateUsername(username) || !validatePassword(password)) {
-		errorDiv.slideDown(300);
-	} else {
-		$('#directoryAccess').slideUp(200);
-		successDiv.html("<a href='doc/directory.pdf' target='_blank'><img src='img/pdf.png' alt='Download Directory PDF'/> Download Directory</a>");
-		successDiv.slideDown(300);
-	}
+	successDiv.slideUp(200);
+
+	var encryptedUserData = encryptUserData(username, password);
+
+	$.ajax({
+		type: "POST",
+		url: "scripts/accessDirectory.php",
+		data: {
+			username: encryptedUserData.username,
+			password: encryptedUserData.password
+		}
+	}).done(function (result) {
+		var jsonResult = $.parseJSON(result);
+		if (jsonResult.resultMessage == "SUCCESS") {
+			successDiv.html(jsonResult.resultHtml);
+			successDiv.slideDown(300);
+			$('#directoryAccess').slideUp(200);
+		}
+		else {
+			errorDiv.html(jsonResult.resultHtml);
+			errorDiv.slideDown(300);
+		}
+		$('#directoryUsername').prop("disabled", false);
+		$('#directoryPassword').prop("disabled", false);
+		$('#directorySubmit').prop("disabled", false);
+	});
+}
+
+function encryptUserData(username, password) {
+	var usernameSalt = "";
+	var passwordSalt = "";
+
+	$.ajax({
+		async: false,
+		url: "scripts/salt.php"
+	}).done(function (result) {
+		var jsonResult = $.parseJSON(result);
+		usernameSalt = jsonResult.usernameSalt;
+		passwordSalt = jsonResult.passwordSalt;
+	});
+
+	return {
+		username: CryptoJS.SHA256(username + usernameSalt).toString(),
+		password: CryptoJS.SHA256(password + passwordSalt).toString()
+	};
 }
 
 function sendMail(recipientEmail, senderEmail, senderName, senderPhone, message) {
@@ -86,7 +113,7 @@ function ajaxPhpMail(recipientEmail, senderEmail, subject, message) {
 				message: message
 			}
 		}).done(function (result) {
-			var jsonResult = eval("(" + result + ")");
+			var jsonResult = $.parseJSON(result);
 			if (jsonResult.errors) {
 				$('#contactUsErrors').html(jsonResult.errors);
 				$('#contactUsErrorContainer').slideDown(300);
