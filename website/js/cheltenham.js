@@ -7,7 +7,7 @@ function showContentContainer(contentContainerId) {
 	$('#li' + contentContainerId).addClass('active');
 	$('#landing').slideUp();
 	$('#sidebar').show();
-	$('#navbar').show();
+	$('#navbar').slideDown();
 	$('#footer').hide();
 	$('#contactUsSuccessContainer').hide();
 	$('#contactUsErrorContainer').hide();
