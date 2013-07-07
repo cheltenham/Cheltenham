@@ -5,9 +5,9 @@ function showContentContainer(contentContainerId) {
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
-	$('#landing').slideUp();
+	$('#landing').hide();
 	$('#sidebar').show();
-	$('#navbar-contents').show();
+	$('#navbar').show();
 	$('#footer').hide();
 	$('#contactUsSuccessContainer').hide();
 	$('#contactUsErrorContainer').hide();
