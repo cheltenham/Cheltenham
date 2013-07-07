@@ -61,11 +61,13 @@ function sendMail(recipientEmail, senderEmail, senderName, senderPhone, message)
 		errorDiv.slideDown(300);
 	}
 	else {
-		ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone ? senderPhone : "(not provided)", message)
+		var subject = "Someone has contacted you from cheltenham.cc";
+		var formattedMessage = "From: " + senderName + "\r\nPhone: " + (senderPhone ? senderPhone : "[not provided]") + "\r\n\r\n" + message;
+		ajaxPhpMail(recipientEmail, senderEmail, subject, formattedMessage)
 	}
 }
 
-function ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone, message) {
+function ajaxPhpMail(recipientEmail, senderEmail, subject, message) {
 	try {
 		$('#contactSendTo').prop('disabled', true);
 		$('#contactName').prop('disabled', true);
@@ -79,16 +81,14 @@ function ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone, messa
 			url: "scripts/sendEmail.php",
 			data: {
 				recipientEmail: recipientEmail,
-				subject: "Someone has contacted you from cheltenham.cc",
+				subject: subject,
 				senderEmail: senderEmail,
-				senderName: senderName,
-				senderPhone: senderPhone,
 				message: message
 			}
 		}).done(function (result) {
 			var jsonResult = eval("(" + result + ")");
 			if (jsonResult.errors) {
-				$('#contactUsErrors').html(jsonResult.responseMessage);
+				$('#contactUsErrors').html(jsonResult.errors);
 				$('#contactUsErrorContainer').slideDown(300);
 			}
 			else {
