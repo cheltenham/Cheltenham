@@ -5,7 +5,7 @@ function showContentContainer(contentContainerId) {
 	$('.nav-item').removeClass('active');
 	$('#div' + contentContainerId).show();
 	$('#li' + contentContainerId).addClass('active');
-	$('#landing').hide();
+	$('#landing').slideUp();
 	$('#sidebar').show();
 	$('#navbar').show();
 	$('#footer').hide();
@@ -72,6 +72,7 @@ function ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone, messa
 		$('#contactEmail').prop('disabled', true);
 		$('#contactPhone').prop('disabled', true);
 		$('#contactMessage').prop('disabled', true);
+		$('#contactSubmit').prop('disabled', true);
 
 		$.ajax({
 			type: "POST",
@@ -103,6 +104,7 @@ function ajaxPhpMail(recipientEmail, senderEmail, senderName, senderPhone, messa
 			$('#contactEmail').prop('disabled', false);
 			$('#contactPhone').prop('disabled', false);
 			$('#contactMessage').prop('disabled', false);
+			$('#contactSubmit').prop('disabled', false);
 		});
 	} catch (e) {
 		alert("error: " + e.description);

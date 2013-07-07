@@ -78,19 +78,22 @@
 			<div class="row-fluid jumbotron-hero-unit">
 				<div class="container-fluid span12">
 					<div class="span4 text-center">
-						<h2>Item 1</h2>
-						<p>blah</p>
 						<img src="img/placeholder3.jpg" class="img-circle"/>
+						<h2>Lorem ipsum dolor</h2>
+						<p>sit amet, eos te mucius omnium, primis vocent vel an, vim ei indoctum voluptatum.</p>
+						<a href="javascript:showContentContainer('News')" class="btn btn-success">View more &raquo;</a>
 					</div>
 					<div class="span4 text-center">
-						<h2>Item 2</h2>
-						<p>blah</p>
 						<img src="img/placeholder3.jpg" class="img-circle"/>
+						<h2>Lorem ipsum dolor</h2>
+						<p>sit amet, eos te mucius omnium, primis vocent vel an, vim ei indoctum voluptatum.</p>
+						<a href="javascript:showContentContainer('News')" class="btn btn-success">View more &raquo;</a>
 					</div>
 					<div class="span4 text-center">
-						<h2>Item 3</h2>
-						<p>blah</p>
 						<img src="img/placeholder3.jpg" class="img-circle"/>
+						<h2>Lorem ipsum dolor</h2>
+						<p>sit amet, eos te mucius omnium, primis vocent vel an, vim ei indoctum voluptatum.</p>
+						<a href="javascript:showContentContainer('News')" class="btn btn-success">View more &raquo;</a>
 					</div>
 				</div>
 				<br/>
@@ -1331,7 +1334,7 @@
 					<h2>Contact Us</h2>
 
 					<div class="row-fluid">
-						<div class="form-horizontal alert alert-info">
+						<div class="form-horizontal alert alert-success">
 							<br/>
 							<div class="control-group">
 								<label class="control-label" for="contactSendTo">Send message to:</label>
@@ -1372,7 +1375,7 @@
 							</div>
 							<div class="control-group">
 								<div class="controls">
-									<button class="btn btn-primary" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
+									<button id="contactSubmit" class="btn btn-success" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
 								</div>
 							</div>
 						</div>
@@ -1383,7 +1386,7 @@
 					</div>
 
 					<div id="contactUsSuccessContainer" class="row-fluid content-container">
-						<div id="contactUsSuccess" class="alert alert-success">Message sent successfully.</div>
+						<div id="contactUsSuccess" class="alert alert-info">Message sent successfully.</div>
 					</div>
 
 					<hr/>
