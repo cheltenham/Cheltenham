@@ -14,6 +14,11 @@ function showContentContainer(contentContainerId) {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
+function messageForWebMaster(message) {
+	$('#contactSendTo').val('Keith Policano (Website Designer)');
+	$('#contactMessage').val(message)
+}
+
 function fetchDirectory(username, password) {
 	var errorDiv = $('#passwordError');
 	errorDiv.html("");
