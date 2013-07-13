@@ -159,7 +159,6 @@ function populateMinutes() {
 			$(jsonResult).each(function(index, fileName) {
 				html += minutesFileNameToHtml(fileName.toLowerCase());
 			});
-			alert(html);
 			$('#minutesTable').html(html);
 		});
 	} catch (e) {
