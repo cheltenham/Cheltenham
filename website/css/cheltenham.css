@@ -19,7 +19,7 @@ body {
 	background: -o-linear-gradient(45deg, #0b230e 0%, #387f21 100%);
 	background: -ms-linear-gradient(45deg, #0b230e 0%, #387f21 100%);
 	background: linear-gradient(45deg, #0b230e 0%, #387f21 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b230e', endColorstr='#387f21',GradientType=1 );
 	background-attachment: fixed;
 }
 
