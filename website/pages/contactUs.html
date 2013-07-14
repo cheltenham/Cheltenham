@@ -1,0 +1,127 @@
+
+<h2>Contact Us</h2>
+
+<div class="row-fluid">
+	<div class="form-horizontal alert alert-success">
+		<br/>
+		<div class="control-group">
+			<label class="control-label" for="contactSendTo">Send message to:</label>
+			<div class="controls">
+				<select class="span12" id="contactSendTo" required>
+					<option value="kpolicano+cheltenham@gmail.com">Keith Policano (Website Designer)</option>
+					<option value="jenie.curell@cheltenham.cc">Jenie Curell (2nd Vice President &amp; Architectural Review)</option>
+					<option value="cathy.frank@cheltenham.cc">Cathy Frank (Treasurer)</option>
+					<option value="carrie.ellzey@cheltenham.cc">Carrie Ellzey (Secretary &amp; Welcome Committee)</option>
+					<option value="brandy.gorham@cheltenham.cc">Brandy Gorham (Welcome Committee)</option>
+					<option value="marcia.heben@cheltenham.cc">Marcia Heben (Neighborhood Watch Coordinator)</option>
+				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactName">Your Name:</label>
+			<div class="controls">
+				<input class="span12" type="text" id="contactName" placeholder="John Doe" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactEmail">Your Email:</label>
+			<div class="controls">
+				<input class="span12" type="email" id="contactEmail" placeholder="john.doe@cheltenham.cc" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactPhone">Your Phone (optional):</label>
+			<div class="controls">
+				<input class="span12" type="tel" id="contactPhone" placeholder="(937) 555-5555">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactMessage">Your Message:</label>
+			<div class="controls">
+				<textarea class="span12" rows="6" id="contactMessage" required></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button id="contactSubmit" class="btn btn-success" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="contactUsErrorContainer" class="row-fluid content-container">
+	<div id="contactUsErrors" class="alert alert-error"></div>
+</div>
+
+<div id="contactUsSuccessContainer" class="row-fluid content-container">
+	<div id="contactUsSuccess" class="alert alert-info">Message sent successfully.</div>
+</div>
+
+<hr/>
+<div class="row-fluid">
+	<h3>Other Ways to Get In Touch</h3>
+
+	<br/>
+	<h5>by mail:</h5>
+	<table class="table table-bordered">
+		<tr>
+			<td>
+				<address>
+					<strong>Cheltenham Homeowners Association</strong>
+					<br/>P.O. Box 293055
+					<br/>Dayton, Ohio  45429
+				</address>
+			</td>
+		</tr>
+	</table>
+
+	<br/>
+	<h5>by phone:</h5>
+	<table class="table table-bordered">
+		<tr>
+			<th>Person</th>
+			<th>Role</th>
+			<th>Phone&nbsp;Number</th>
+		</tr>
+		<tr>
+			<td>Corinne Smith</td>
+			<td>HOA President</td>
+			<td>(937) 433-8911</td>
+		</tr>
+		<tr>
+			<td>Walter Baab</td>
+			<td>HOA First Vice-President / Volunteer Coordinator</td>
+			<td>(937) 436-1137</td>
+		</tr>
+		<tr>
+			<td>Jenie Curell</td>
+			<td>HOA Second Vice-President and Architectural Review</td>
+			<td>(937) 438-8207</td>
+		</tr>
+		<tr>
+			<td>Cathy Frank</td>
+			<td>HOA Treasurer</td>
+			<td>(937) 435-6191</td>
+		</tr>
+		<tr>
+			<td>Carrie Ellzey</td>
+			<td>HOA Secretary / Welcome Committee</td>
+			<td>(937) 436-5478</td>
+		</tr>
+		<tr>
+			<td>Calvin Frank</td>
+			<td>Volunteer Coordinator</td>
+			<td>(937) 435-6192</td>
+		</tr>
+		<tr>
+			<td>Brandy Gorham</td>
+			<td>Welcome Committee</td>
+			<td>(937) 723-9866</td>
+		</tr>
+		<tr>
+			<td>Marcia Heben</td>
+			<td>Neighborhood Watch Coordinator</td>
+			<td>(937) 434-0238</td>
+		</tr>
+	</table>
+</div>
