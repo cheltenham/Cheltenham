@@ -5,14 +5,17 @@
  * @param errorContainerId the ID of the DOM element that displays error messages
  * @param successContainerId the ID of the DOM element that displays the link to the directory
  * @param directoryAuthenticationContainerId the ID of the DOM element that contains the authentication fields
+ * @param submitBtnId the ID of the DOM submit button
  */
-function fetchDirectory(username, password, errorContainerId, successContainerId, directoryAuthenticationContainerId) {
+function fetchDirectory(username, password, errorContainerId, successContainerId, directoryAuthenticationContainerId, submitBtnId) {
 	var errorContainer = $(errorContainerId);
 	var successContainer = $(successContainerId);
 	var authenticationContainer = $(directoryAuthenticationContainerId);
+	var button = $(submitBtnId);
 
 	errorContainer.slideUp(200);
 	successContainer.slideUp(200);
+	button.prop("disabled", true);
 
 	/** Encrypt username and password **/
 	$.ajax({
@@ -43,6 +46,8 @@ function fetchDirectory(username, password, errorContainerId, successContainerId
 				errorContainer.slideDown(300);
 			}
 		});
+	}).always(function() {
+		button.prop("disabled", false);
 	});
 }
 
