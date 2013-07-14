@@ -1,6 +1,51 @@
 <h2>Contractors Mentioned by our Neighbors</h2>
 <p>Here is a list of contractors recommended by individual homeowners.  This list has been compiled solely based on mentions by our neighbors and does not represent an endorsement of the contractor by the homeowners association or an endorsement of the quality of their work.</p>
-<p>If you've had good experiences with contractors, please <a href="javascript:showContentContainer('Contact')" onclick="messageForWebMaster('I would like to recommend the following contractors for the neighborhood website:\n')">let us know</a>!</p>
+<p>If you've had good experiences with contractors, please <a href="#recommendContractor" data-toggle="modal">let us know</a>!</p>
+
+<!-- Recommend Contractor modal -->
+<div id="recommendContractor" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="recommendContractorHeader" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="recommendContractorHeader">Recommend a Contractor</h3>
+	</div>
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="recommendContractorName">Your Name:</label>
+				<div class="controls">
+					<input type="text" id="recommendContractorName" placeholder="John Doe" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="recommendContractorEmail">Your Email:</label>
+				<div class="controls">
+					<input type="email" id="recommendContractorEmail" placeholder="john.doe@cheltenham.cc" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="recommendContractorRecommendation">Recommendation(s):</label>
+				<div class="controls">
+					<textarea rows="6" id="recommendContractorRecommendation" required></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<div id="recommendContractorError" class="hide alert alert-error text-center"></div>
+		<div id="recommendContractorSuccess" class="hide alert alert-success text-center">
+			Your recommendation has been submitted.
+			<br/>
+			We will let you know when the page is updated.
+			<br/>
+			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetRecommendContractorRequest();">OK</button>
+		</div>
+		<button id="recommentContractorCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		<button id="recommentContractorSubmitBtn" class="btn btn-primary" onclick="submitRecommendContractorRequest($('#recommendContractorName').val(), $('#recommendContractorEmail').val(), $('#recommendContractorRecommendation').val(), '#recommendContractorError', '#recommendContractorSuccess');">Submit Recommendation</button>
+	</div>
+</div>
+
+
+<!-- A lot of contractors... -->
 <br/>
 <hr/>
 <h4>Appliance Service:</h4>
