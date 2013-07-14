@@ -1,5 +1,5 @@
 <h2>Links</h2>
-<p>Please <a href="javascript:showContentContainer('Contact')" onclick="messageForWebMaster('I would like to add the following link(s) to the neighborhood website:\n')">let us know</a> if there are any links you would like us to add to this page.</p>
+<p>Please <a href="#recommendLink" data-toggle="modal">let us know</a> if there are any links you would like us to add to this page.</p>
 <br/>
 <table class="table table-bordered">
 	<thead>
@@ -53,3 +53,45 @@
 	</tr>
 	</tbody>
 </table>
+
+<!-- Recommend Link modal -->
+<div id="recommendLink" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="recommendLinkHeader" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="recommendLinkHeader">Recommend Links</h3>
+	</div>
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="recommendLinkName">Your Name:</label>
+				<div class="controls">
+					<input type="text" id="recommendLinkName" placeholder="John Doe" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="recommendLinkEmail">Your Email:</label>
+				<div class="controls">
+					<input type="email" id="recommendLinkEmail" placeholder="john.doe@cheltenham.cc" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="recommendLinkRecommendation">Recommendation(s):</label>
+				<div class="controls">
+					<textarea rows="6" id="recommendLinkRecommendation" required></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<div id="recommendLinkError" class="hide alert alert-error text-center"></div>
+		<div id="recommendLinkSuccess" class="hide alert alert-success text-center">
+			Your recommendation has been submitted.
+			<br/>
+			We will let you know when the page has been updated.
+			<br/>
+			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetRecommendLink();">OK</button>
+		</div>
+		<button id="recommendLinkCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		<button id="recommendLinkSubmitBtn" class="btn btn-primary" onclick="submitRecommendLink($('#recommendLinkName').val(), $('#recommendLinkEmail').val(), $('#recommendLinkRecommendation').val(), '#recommendLinkError', '#recommendLinkSuccess');">Submit Recommendation</button>
+	</div>
+</div>
