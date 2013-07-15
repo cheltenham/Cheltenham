@@ -43,18 +43,18 @@
 		</div>
 		<div class="control-group">
 			<div class="controls">
-				<button id="contactSubmit" class="btn btn-success" onclick="sendMail($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
+				<button id="contactSubmit" class="btn btn-success" onclick="submitContactUs($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="contactUsErrorContainer" class="row-fluid content-container">
-	<div id="contactUsErrors" class="alert alert-error"></div>
+<div id="contactUsErrorContainer" class="row-fluid">
+	<div id="contactUsErrors" class="hide alert alert-error text-center"></div>
 </div>
 
-<div id="contactUsSuccessContainer" class="row-fluid content-container">
-	<div id="contactUsSuccess" class="alert alert-info">Message sent successfully.</div>
+<div id="contactUsSuccessContainer" class="row-fluid">
+	<div id="contactUsSuccess" class="hide alert alert-info text-center">Message sent successfully.</div>
 </div>
 
 <hr/>
