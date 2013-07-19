@@ -18,6 +18,21 @@ $(function() {
 			$('#tabs').tab();
 		});
 	});
+
+	/** When a tab is clicked, add "#[tab]" to the URL **/
+	$('a[data-toggle="tab"]').on('click', function(e) {
+		history.pushState(null, null, $(this).attr('href'));
+	});
+
+	/** Enable support for back/forward browser buttons when switching tabs **/
+	window.addEventListener("popstate", function(e) {
+		var activeTab = $('[href=' + location.hash + ']');
+		if (activeTab.length) {
+			activeTab.tab('show');
+		} else {
+			$('.nav-pills a:first').tab('show');
+		}
+	});
 });
 
 /**
