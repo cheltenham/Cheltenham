@@ -33,9 +33,6 @@ $(function() {
 			$('.nav-pills a:first').tab('show');
 		}
 	});
-
-	/** Initialize moment **/
-//	moment().format();
 });
 
 /**
