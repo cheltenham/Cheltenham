@@ -2,7 +2,6 @@ body {
 	padding: 60px 20px 20px 5px;
 }
 
-/* Photo Carousel Buttons */
 .carousel-control {
 	height: 80px;
 	margin-top: 45px;
@@ -11,4 +10,8 @@ body {
 	background-color: transparent;
 	border: 0;
 	z-index: 10;
+}
+
+.carousel-inner {
+	width: 100%;
 }
