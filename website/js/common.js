@@ -33,6 +33,9 @@ $(function() {
 			$('.nav-pills a:first').tab('show');
 		}
 	});
+
+	/** Initialize moment **/
+//	moment().format();
 });
 
 /**
@@ -90,4 +93,13 @@ function sendEmail(to, from, subject, message, resultFunction) {
 		console.log(data);
 		resultFunction.call(this, data.result, data.errors);
 	});
+}
+
+/**
+ * Gets the number of years from the given date to now.
+ * @param dateMoment the date as a Moment object
+ * @returns the number of years between the given date and now
+ */
+function yearsSince(dateMoment) {
+	return moment().diff(dateMoment, 'years', true);
 }

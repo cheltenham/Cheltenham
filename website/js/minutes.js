@@ -1,4 +1,5 @@
 var MINUTES_DIR = 'doc/minutes';
+var DATE_FORMAT = 'YYYYMMDD';
 
 /**
  * Populates the minutes table with contents.
@@ -6,13 +7,11 @@ var MINUTES_DIR = 'doc/minutes';
  */
 function populateMinutesTable(minutesContentId) {
 	return fileNamesToHtml(MINUTES_DIR, minutesContentId, function(fileName) {
-		var year = Number(new Date().getFullYear());
-		var fileYear = Number(fileName.substring(0, 4));
 		var html = "";
-
-		if (year < fileYear + 3) {
+		var date = moment(fileName.substring(0, 8), DATE_FORMAT);
+		if (yearsSince(date) < 3) {
 			html = "<tr>" +
-						"<td>" + getMinutesFileNameFullDate(fileName)+ "</td>" +
+						"<td>" + date.format('MMMM D, YYYY') + "</td>" +
 						"<td>" + getMinutesFileNameMeetingType(fileName)+ "</td>" +
 						"<td>" +
 							"<a href='" + MINUTES_DIR + '/' + fileName + "' target='_blank'>" +
@@ -21,7 +20,6 @@ function populateMinutesTable(minutesContentId) {
 						"</td>" +
 				   "</tr>"
 		}
-
 		return html;
 	});
 }
@@ -32,13 +30,11 @@ function populateMinutesTable(minutesContentId) {
  */
 function populateArchivedMinutesTable(minutesContentId) {
 	return fileNamesToHtml(MINUTES_DIR, minutesContentId, function(fileName) {
-		var year = Number(new Date().getFullYear());
-		var fileYear = Number(fileName.substring(0, 4));
 		var html = "";
-
-		if (year >= fileYear + 3) {
+		var date = moment(fileName.substring(0, 8), DATE_FORMAT);
+		if (yearsSince(date) >= 3) {
 			html = "<tr>" +
-						"<td>" + getMinutesFileNamePartialDate(fileName)+ "</td>" +
+						"<td>" + date.format('MMMM YYYY') + "</td>" +
 						"<td>" +
 							"<a href='" + MINUTES_DIR + '/' + fileName + "' target='_blank'>" +
 								"<img src='img/" + getFileExtension(fileName) + ".png' alt='Download Minutes'> " + getMinutesFileNameMeetingType(fileName) + " Minutes" +
@@ -46,64 +42,8 @@ function populateArchivedMinutesTable(minutesContentId) {
 						"</td>" +
 				   "</tr>"
 		}
-
 		return html;
 	});
-}
-
-/**
- * Converts the file name of a Minutes file to a date.
- * @param minutesFileName the file name
- * @returns string a date
- */
-function getMinutesFileNameFullDate(minutesFileName) {
-	var year = minutesFileName.substring(0, 4);
-	var month = minutesFileName.substring(4, 6);
-	var day = minutesFileName.substring(6, 8);
-
-	switch(month) {
-		case "01": month = "January"; break;
-		case "02": month = "February"; break;
-		case "03": month = "March"; break;
-		case "04": month = "April"; break;
-		case "05": month = "May"; break;
-		case "06": month = "June"; break;
-		case "07": month = "July"; break;
-		case "08": month = "August"; break;
-		case "09": month = "September"; break;
-		case "10": month = "October"; break;
-		case "11": month = "November"; break;
-		case "12": month = "December"; break;
-	}
-
-	return month + " " + day + ", " + year;
-}
-
-/**
- * Converts the file name of a Minutes file to a date.
- * @param minutesFileName the file name
- * @returns string a date
- */
-function getMinutesFileNamePartialDate(minutesFileName) {
-	var year = minutesFileName.substring(0, 4);
-	var month = minutesFileName.substring(4, 6);
-
-	switch(month) {
-		case "01": month = "January"; break;
-		case "02": month = "February"; break;
-		case "03": month = "March"; break;
-		case "04": month = "April"; break;
-		case "05": month = "May"; break;
-		case "06": month = "June"; break;
-		case "07": month = "July"; break;
-		case "08": month = "August"; break;
-		case "09": month = "September"; break;
-		case "10": month = "October"; break;
-		case "11": month = "November"; break;
-		case "12": month = "December"; break;
-	}
-
-	return month + " " + year;
 }
 
 /**
