@@ -1,5 +1,6 @@
 var MINUTES_DIR = 'doc/minutes';
 var DATE_FORMAT = 'YYYYMMDD';
+var YEARS_BEFORE_ARCHIVING = 3;
 
 /**
  * Populates the minutes table with contents.
@@ -9,7 +10,7 @@ function populateMinutesTable(minutesContentId) {
 	return fileNamesToHtml(MINUTES_DIR, minutesContentId, function(fileName) {
 		var html = "";
 		var date = moment(fileName.substring(0, 8), DATE_FORMAT);
-		if (yearsSince(date) < 3) {
+		if (yearsSince(date) <= YEARS_BEFORE_ARCHIVING) {
 			html = "<tr>" +
 						"<td>" + date.format('MMMM D, YYYY') + "</td>" +
 						"<td>" + getMinutesFileNameMeetingType(fileName)+ "</td>" +
@@ -32,7 +33,7 @@ function populateArchivedMinutesTable(minutesContentId) {
 	return fileNamesToHtml(MINUTES_DIR, minutesContentId, function(fileName) {
 		var html = "";
 		var date = moment(fileName.substring(0, 8), DATE_FORMAT);
-		if (yearsSince(date) >= 3) {
+		if (yearsSince(date) > YEARS_BEFORE_ARCHIVING) {
 			html = "<tr>" +
 						"<td>" + date.format('MMMM YYYY') + "</td>" +
 						"<td>" +
