@@ -29,13 +29,13 @@ function submitRecommendContractorRequest(name, email, recommendation, errorCont
 
 	var inputErrors = "";
 	if (!name) {
-		inputErrors += "Please enter your name. ";
+		inputErrors += "Please enter your name.<br/>";
 	}
 	if (!email) {
-		inputErrors += "Please enter your email address. ";
+		inputErrors += "Please enter your email address.<br/>";
 	}
 	if (!recommendation) {
-		inputErrors += "Please make a recommendation. ";
+		inputErrors += "Please make a recommendation.<br/>";
 	}
 
 	if (inputErrors == "") {

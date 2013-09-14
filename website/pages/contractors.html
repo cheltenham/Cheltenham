@@ -12,29 +12,29 @@
 			</div>
 			<div class="modal-body">
 				<div class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="recommendContractorName">Your Name:</label>
-						<div class="controls">
-							<input type="text" id="recommendContractorName" placeholder="John Doe" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendContractorName">Your Name:</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="recommendContractorName" placeholder="John Doe">
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="recommendContractorEmail">Your Email:</label>
-						<div class="controls">
-							<input type="email" id="recommendContractorEmail" placeholder="john.doe@cheltenham.cc" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendContractorEmail">Your Email:</label>
+						<div class="col-xs-5">
+							<input type="email" class="form-control" id="recommendContractorEmail" placeholder="john.doe@cheltenham.cc" required>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="recommendContractorRecommendation">Recommendation(s):</label>
-						<div class="controls">
-							<textarea rows="6" id="recommendContractorRecommendation" required></textarea>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendContractorRecommendation">Recommendation(s):</label>
+						<div class="col-xs-7">
+							<textarea rows="6" class="form-control" id="recommendContractorRecommendation" required></textarea>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<div id="recommendContractorError" class="hide alert alert-error text-center"></div>
-				<div id="recommendContractorSuccess" class="hide alert alert-success text-center">
+				<div id="recommendContractorError" class="alert-hidden alert alert-danger text-center"></div>
+				<div id="recommendContractorSuccess" class="alert-hidden alert alert-success text-center">
 					Your recommendation has been submitted.
 					<br/>
 					We will let you know when the page is updated.
