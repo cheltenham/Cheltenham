@@ -23,7 +23,7 @@
 	<div class="control-group">
 		<div class="controls">
 			<button id="directorySubmit" class="btn btn-primary" onclick="fetchDirectory($('#directoryUsername').val(), $('#directoryPassword').val(), '#directoryAuthenticationError', '#directoryDownload', '#directoryAccess', '#directorySubmit');">Access Directory</button>
-			<a class="btn-small btn-link" href="#directoryAccessRequest" data-toggle="modal">Request Access</a>
+			<a class="btn-sm btn-link" href="#directoryAccessRequest" data-toggle="modal">Request Access</a>
 		</div>
 	</div>
 </div>
@@ -69,7 +69,7 @@
 			<br/>
 			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetUpdateContactInformationRequest();">OK</button>
 		</div>
-		<button id="updateContactCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		<button id="updateContactCancelBtn" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
 		<button id="updateContactSubmitBtn" class="btn btn-primary" onclick="submitUpdateContactInformationRequest($('#updateContactName').val(), $('#updateContactEmail').val(), $('#updateContactDetails').val(), '#updateContactInformationError', '#updateContactInformationSuccess');">Submit Request</button>
 	</div>
 </div>
@@ -118,7 +118,7 @@
 			<br/>
 			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetDirectoryAccessRequest();">OK</button>
 		</div>
-		<button id="directoryAccessRequestCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		<button id="directoryAccessRequestCancelBtn" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
 		<button id="directoryAccessRequestSubmitBtn" class="btn btn-primary" onclick="submitDirectoryAccessRequest($('#directoryAccessName').val(), $('#directoryAccessEmail').val(), $('#directoryAccessPhone').val(), $('#directoryAccessAddress').val(), '#directoryAccessRequestError', '#directoryAccessRequestSuccess');">Submit Request</button>
 	</div>
 </div>
