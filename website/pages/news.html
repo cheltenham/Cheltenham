@@ -37,11 +37,11 @@
 	</div>
 </div>
 
-<div id="submitNews" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="submitNewsHeader" aria-hidden="true">
+<div id="submitNews" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<button type="button" class="close" data-dismiss="modal">×</button>
 				<h3 id="submitNewsHeader">Submit News</h3>
 			</div>
 			<div class="modal-body">
@@ -73,9 +73,9 @@
 					<br/>
 					We will let you know when the page is updated.
 					<br/>
-					<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetSubmitNewsRequest();">OK</button>
+					<button class="btn btn-success" data-dismiss="modal" onclick="resetSubmitNewsRequest();">OK</button>
 				</div>
-				<button id="submitNewsCancelBtn" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button id="submitNewsCancelBtn" class="btn btn-default" data-dismiss="modal">Cancel</button>
 				<button id="submitNewsSubmitBtn" class="btn btn-primary" onclick="submitNewsRequest($('#submitNewsName').val(), $('#submitNewsEmail').val(), $('#submitNewsNews').val(), '#submitNewsError', '#submitNewsSuccess');">Submit News</button>
 			</div>
 		</div>
