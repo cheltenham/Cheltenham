@@ -1,0 +1,22 @@
+body {
+	padding: 60px 20px 30px;
+}
+
+#tabs span.glyphicon {
+	color: white;
+}
+
+.nav-header {
+	text-transform: uppercase;
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #888;
+	padding-top: 5px;
+}
+
+/* fix for IE10 */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
