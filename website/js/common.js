@@ -12,7 +12,7 @@ $(function() {
 	});
 
 	/** When other tabs are selected, populate the tab content via AJAX **/
-	$('#tabs').bind('show', function(e) {
+	$('#tabs').bind('shown.bs.tab', function(e) {
 		var contentId = e.target.toString().match(/#.+/gi)[0];
 		$(contentId).load(PAGES_DIR + '/' + contentId.replace('#','') + '.html', function() {
 			$('#tabs').tab();
