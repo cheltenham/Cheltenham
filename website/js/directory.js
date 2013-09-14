@@ -82,13 +82,13 @@ function submitUpdateContactInformationRequest(name, email, details, errorConten
 
 	var inputErrors = "";
 	if (!name) {
-		inputErrors += "Please enter your name. ";
+		inputErrors += "Please enter your name.<br/>";
 	}
 	if (!email) {
-		inputErrors += "Please enter your email address. ";
+		inputErrors += "Please enter your email address.<br/>";
 	}
 	if (!details) {
-		inputErrors += "Please enter the details of your request. ";
+		inputErrors += "Please enter the details of your request.<br/>";
 	}
 
 	if (inputErrors == "") {
@@ -141,16 +141,16 @@ function submitDirectoryAccessRequest(name, email, phone, address, errorContentI
 
 	var inputErrors = "";
 	if (!name) {
-		inputErrors += "Please enter your name. ";
+		inputErrors += "Please enter your name.<br/>";
 	}
 	if (!email) {
-		inputErrors += "Please enter your email address. ";
+		inputErrors += "Please enter your email address.<br/>";
 	}
 	if (!phone) {
-		inputErrors += "Please enter your phone number. ";
+		inputErrors += "Please enter your phone number.<br/>";
 	}
 	if (!address) {
-		inputErrors += "Please enter your address. ";
+		inputErrors += "Please enter your address.<br/>";
 	}
 
 	if (inputErrors == "") {

@@ -17,16 +17,16 @@ function submitContactUs(to, from, name, phone, message) {
 
 	var inputErrors = "";
 	if (!to) {
-		inputErrors += "Please select a recipient. ";
+		inputErrors += "Please select a recipient.<br/>";
 	}
 	if (!name) {
-		inputErrors += "Please enter your name. ";
+		inputErrors += "Please enter your name.<br/>";
 	}
 	if (!from) {
-		inputErrors += "Please enter your email address. ";
+		inputErrors += "Please enter your email address.<br/>";
 	}
 	if (!message) {
-		inputErrors += "Please enter a message. ";
+		inputErrors += "Please enter a message.<br/>";
 	}
 
 	if (inputErrors == "") {

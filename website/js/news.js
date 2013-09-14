@@ -29,13 +29,13 @@ function submitNewsRequest(name, email, news, errorContentId, successContentId) 
 
 	var inputErrors = "";
 	if (!name) {
-		inputErrors += "Please enter your name. ";
+		inputErrors += "Please enter your name.<br/>";
 	}
 	if (!email) {
-		inputErrors += "Please enter your email address. ";
+		inputErrors += "Please enter your email address.<br/>";
 	}
 	if (!news) {
-		inputErrors += "Please enter your news. ";
+		inputErrors += "Please enter your news.<br/>";
 	}
 
 	if (inputErrors == "") {
