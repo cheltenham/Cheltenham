@@ -4,10 +4,10 @@
 <div class="row">
 	<div class="form-horizontal alert alert-success">
 		<br/>
-		<div class="control-group">
-			<label class="control-label" for="contactSendTo">Send message to:</label>
-			<div class="controls">
-				<select class="col-xs-12" id="contactSendTo" required>
+		<div class="form-group">
+			<label class="col-xs-4 control-label" for="contactSendTo">Send message to:</label>
+			<div class="col-xs-8">
+				<select class="form-control" id="contactSendTo" required>
 					<option value="kpolicano+cheltenham@gmail.com">Keith Policano (Website Designer)</option>
 					<option value="jenie.curell@cheltenham.cc">Jenie Curell (2nd Vice President &amp; Architectural Review)</option>
 					<option value="cathy.frank@cheltenham.cc">Cathy Frank (Treasurer)</option>
@@ -17,32 +17,33 @@
 				</select>
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label" for="contactName">Your Name:</label>
-			<div class="controls">
-				<input class="col-xs-12" type="text" id="contactName" placeholder="John Doe" required>
+		<div class="form-group">
+			<label class="col-xs-4 control-label" for="contactName">Your Name:</label>
+			<div class="col-xs-5">
+				<input class="form-control" type="text" id="contactName" placeholder="John Doe">
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label" for="contactEmail">Your Email:</label>
-			<div class="controls">
-				<input class="col-xs-12" type="email" id="contactEmail" placeholder="john.doe@cheltenham.cc" required>
+		<div class="form-group">
+			<label class="col-xs-4 control-label" for="contactEmail">Your Email:</label>
+			<div class="col-xs-5">
+				<input class="form-control" type="email" id="contactEmail" placeholder="john.doe@cheltenham.cc">
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label" for="contactPhone">Your Phone (optional):</label>
-			<div class="controls">
-				<input class="col-xs-12" type="tel" id="contactPhone" placeholder="(937) 555-5555">
+		<div class="form-group">
+			<label class="col-xs-4 control-label" for="contactPhone">Your Phone (optional):</label>
+			<div class="col-xs-5">
+				<input class="form-control" type="tel" id="contactPhone" placeholder="(937) 555-5555">
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label" for="contactMessage">Your Message:</label>
-			<div class="controls">
-				<textarea class="col-xs-12" rows="6" id="contactMessage" required></textarea>
+		<div class="form-group">
+			<label class="col-xs-4 control-label" for="contactMessage">Your Message:</label>
+			<div class="col-xs-7">
+				<textarea class="form-control" rows="6" id="contactMessage" required></textarea>
 			</div>
 		</div>
-		<div class="control-group">
-			<div class="controls">
+		<div class="form-group">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-8">
 				<button id="contactSubmit" class="btn btn-success" onclick="submitContactUs($('#contactSendTo').val(), $('#contactEmail').val(), $('#contactName').val(), $('#contactPhone').val(), $('#contactMessage').val())">Send Message</button>
 			</div>
 		</div>
@@ -50,11 +51,11 @@
 </div>
 
 <div id="contactUsErrorContainer" class="row">
-	<div id="contactUsErrors" class="hide alert alert-error text-center"></div>
+	<div id="contactUsErrors" class="alert-hidden alert alert-danger text-center"></div>
 </div>
 
 <div id="contactUsSuccessContainer" class="row">
-	<div id="contactUsSuccess" class="hide alert alert-info text-center">Message sent successfully.</div>
+	<div id="contactUsSuccess" class="alert-hidden alert alert-info text-center">Message sent successfully.</div>
 </div>
 
 <hr/>
