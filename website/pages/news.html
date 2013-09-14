@@ -37,43 +37,47 @@
 	</div>
 </div>
 
-<div id="submitNews" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="submitNewsHeader" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="submitNewsHeader">Submit News</h3>
-	</div>
-	<div class="modal-body">
-		<div class="form-horizontal">
-			<div class="control-group">
-				<label class="control-label" for="submitNewsName">Your Name:</label>
-				<div class="controls">
-					<input type="text" id="submitNewsName" placeholder="John Doe" required>
+<div id="submitNews" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="submitNewsHeader" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="submitNewsHeader">Submit News</h3>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="submitNewsName">Your Name:</label>
+						<div class="controls">
+							<input type="text" id="submitNewsName" placeholder="John Doe" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="submitNewsEmail">Your Email:</label>
+						<div class="controls">
+							<input type="email" id="submitNewsEmail" placeholder="john.doe@cheltenham.cc" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="submitNewsNews">Recommendation(s):</label>
+						<div class="controls">
+							<textarea rows="6" id="submitNewsNews" required></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="submitNewsEmail">Your Email:</label>
-				<div class="controls">
-					<input type="email" id="submitNewsEmail" placeholder="john.doe@cheltenham.cc" required>
+			<div class="modal-footer">
+				<div id="submitNewsError" class="hide alert alert-error text-center"></div>
+				<div id="submitNewsSuccess" class="hide alert alert-success text-center">
+					Your news has been submitted for review.
+					<br/>
+					We will let you know when the page is updated.
+					<br/>
+					<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetSubmitNewsRequest();">OK</button>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="submitNewsNews">Recommendation(s):</label>
-				<div class="controls">
-					<textarea rows="6" id="submitNewsNews" required></textarea>
-				</div>
+				<button id="submitNewsCancelBtn" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button id="submitNewsSubmitBtn" class="btn btn-primary" onclick="submitNewsRequest($('#submitNewsName').val(), $('#submitNewsEmail').val(), $('#submitNewsNews').val(), '#submitNewsError', '#submitNewsSuccess');">Submit News</button>
 			</div>
 		</div>
-	</div>
-	<div class="modal-footer">
-		<div id="submitNewsError" class="hide alert alert-error text-center"></div>
-		<div id="submitNewsSuccess" class="hide alert alert-success text-center">
-			Your news has been submitted for review.
-			<br/>
-			We will let you know when the page is updated.
-			<br/>
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetSubmitNewsRequest();">OK</button>
-		</div>
-		<button id="submitNewsCancelBtn" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		<button id="submitNewsSubmitBtn" class="btn btn-primary" onclick="submitNewsRequest($('#submitNewsName').val(), $('#submitNewsEmail').val(), $('#submitNewsNews').val(), '#submitNewsError', '#submitNewsSuccess');">Submit News</button>
 	</div>
 </div>
