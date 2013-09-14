@@ -6,6 +6,10 @@ body {
 	color: white;
 }
 
+.alert-hidden {
+	display: none;
+}
+
 .nav-header {
 	text-transform: uppercase;
 	font-size: 0.75em;
@@ -20,3 +24,7 @@ body {
 @-ms-viewport       { width: device-width; }
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
+
+.modal {
+	overflow:auto;
+}
