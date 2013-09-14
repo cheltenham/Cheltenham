@@ -20,7 +20,7 @@ $(function() {
 	});
 
 	/** When a tab is clicked, add "#[tab]" to the URL **/
-	$('a[data-toggle="tab"]').on('click', function(e) {
+	$('a[data-toggle="pill"]').on('click', function(e) {
 		history.pushState(null, null, $(this).attr('href'));
 	});
 
