@@ -29,13 +29,13 @@ function submitRecommendLink(name, email, recommendation, errorContentId, succes
 
 	var inputErrors = "";
 	if (!name) {
-		inputErrors += "Please enter your name.<br/>";
+		inputErrors += "Please enter your name. ";
 	}
 	if (!email) {
-		inputErrors += "Please enter your email address.<br/>";
+		inputErrors += "Please enter your email address. ";
 	}
 	if (!recommendation) {
-		inputErrors += "Please make a recommendation.<br/>";
+		inputErrors += "Please make a recommendation. ";
 	}
 
 	if (inputErrors == "") {

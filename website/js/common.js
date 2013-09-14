@@ -61,10 +61,10 @@ function fileNamesToHtml(directoryPath, contentId, htmlConversionFunction) {
 /**
  * Gets the extension (e.g., 'pdf') of the given file name.
  * @param fileName the file name
- * @returns String the file extension in lower case
+ * @returns String the file extension
  */
 function getFileExtension(fileName) {
-	return fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
+	return fileName.substring(fileName.lastIndexOf('.') + 1);
 }
 
 /**
