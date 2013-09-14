@@ -46,29 +46,29 @@
 			</div>
 			<div class="modal-body">
 				<div class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="submitNewsName">Your Name:</label>
-						<div class="controls">
-							<input type="text" id="submitNewsName" placeholder="John Doe" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="submitNewsName">Your Name:</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="submitNewsName" placeholder="John Doe" required>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="submitNewsEmail">Your Email:</label>
-						<div class="controls">
-							<input type="email" id="submitNewsEmail" placeholder="john.doe@cheltenham.cc" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="submitNewsEmail">Your Email:</label>
+						<div class="col-xs-5">
+							<input type="email" class="form-control" id="submitNewsEmail" placeholder="john.doe@cheltenham.cc" required>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="submitNewsNews">Recommendation(s):</label>
-						<div class="controls">
-							<textarea rows="6" id="submitNewsNews" required></textarea>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="submitNewsNews">Your News:</label>
+						<div class="col-xs-7">
+							<textarea rows="6" class="form-control" id="submitNewsNews" required></textarea>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<div id="submitNewsError" class="hide alert alert-error text-center"></div>
-				<div id="submitNewsSuccess" class="hide alert alert-success text-center">
+				<div id="submitNewsError" class="alert-hidden alert alert-danger text-center"></div>
+				<div id="submitNewsSuccess" class="alert-hidden alert alert-success text-center">
 					Your news has been submitted for review.
 					<br/>
 					We will let you know when the page is updated.
