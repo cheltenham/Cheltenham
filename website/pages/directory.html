@@ -23,7 +23,7 @@
 	<div class="control-group">
 		<div class="controls">
 			<button id="directorySubmit" class="btn btn-primary" onclick="fetchDirectory($('#directoryUsername').val(), $('#directoryPassword').val(), '#directoryAuthenticationError', '#directoryDownload', '#directoryAccess', '#directorySubmit');">Access Directory</button>
-			<a class="btn-small btn-link" href="#directoryAccessRequest" data-toggle="modal">Request Access</a>
+			<a class="btn-sm btn-link" href="#directoryAccessRequest" data-toggle="modal">Request Access</a>
 		</div>
 	</div>
 </div>
@@ -33,92 +33,100 @@
 
 
 <!-- Update contact info modal -->
-<div id="updateContactInformationRequest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="updateContactInformationRequestHeader" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="updateContactInformationRequestHeader">Update Your Directory Information</h3>
-	</div>
-	<div class="modal-body">
-		<div class="form-horizontal">
-			<div class="control-group">
-				<label class="control-label" for="updateContactName">Your Name:</label>
-				<div class="controls">
-					<input type="text" id="updateContactName" placeholder="John Doe" required>
+<div id="updateContactInformationRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="updateContactInformationRequestHeader" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="updateContactInformationRequestHeader">Update Your Directory Information</h3>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="updateContactName">Your Name:</label>
+						<div class="controls">
+							<input type="text" id="updateContactName" placeholder="John Doe" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="updateContactEmail">Your Email:</label>
+						<div class="controls">
+							<input type="email" id="updateContactEmail" placeholder="john.doe@cheltenham.cc" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="updateContactDetails">Your Updated Contact Information:</label>
+						<div class="controls">
+							<textarea rows="6" id="updateContactDetails" required></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="updateContactEmail">Your Email:</label>
-				<div class="controls">
-					<input type="email" id="updateContactEmail" placeholder="john.doe@cheltenham.cc" required>
+			<div class="modal-footer">
+				<div id="updateContactInformationError" class="hide alert alert-error text-center"></div>
+				<div id="updateContactInformationSuccess" class="hide alert alert-success text-center">
+					Your request has been submitted.
+					<br/>
+					We will let you know when your information has been updated.
+					<br/>
+					<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetUpdateContactInformationRequest();">OK</button>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="updateContactDetails">Your Updated Contact Information:</label>
-				<div class="controls">
-					<textarea rows="6" id="updateContactDetails" required></textarea>
-				</div>
+				<button id="updateContactCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button id="updateContactSubmitBtn" class="btn btn-primary" onclick="submitUpdateContactInformationRequest($('#updateContactName').val(), $('#updateContactEmail').val(), $('#updateContactDetails').val(), '#updateContactInformationError', '#updateContactInformationSuccess');">Submit Request</button>
 			</div>
 		</div>
-	</div>
-	<div class="modal-footer">
-		<div id="updateContactInformationError" class="hide alert alert-error text-center"></div>
-		<div id="updateContactInformationSuccess" class="hide alert alert-success text-center">
-			Your request has been submitted.
-			<br/>
-			We will let you know when your information has been updated.
-			<br/>
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetUpdateContactInformationRequest();">OK</button>
-		</div>
-		<button id="updateContactCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		<button id="updateContactSubmitBtn" class="btn btn-primary" onclick="submitUpdateContactInformationRequest($('#updateContactName').val(), $('#updateContactEmail').val(), $('#updateContactDetails').val(), '#updateContactInformationError', '#updateContactInformationSuccess');">Submit Request</button>
 	</div>
 </div>
 
 
 <!-- Request Access modal -->
-<div id="directoryAccessRequest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="directoryAccessRequestHeader" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="directoryAccessRequestHeader">Request Directory Access</h3>
-	</div>
-	<div class="modal-body">
-		<div class="form-horizontal">
-			<div class="control-group">
-				<label class="control-label" for="directoryAccessName">Your Name:</label>
-				<div class="controls">
-					<input type="text" id="directoryAccessName" placeholder="John Doe" required>
+<div id="directoryAccessRequest" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="directoryAccessRequestHeader" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="directoryAccessRequestHeader">Request Directory Access</h3>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="directoryAccessName">Your Name:</label>
+						<div class="controls">
+							<input type="text" id="directoryAccessName" placeholder="John Doe" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="directoryAccessEmail">Your Email:</label>
+						<div class="controls">
+							<input type="email" id="directoryAccessEmail" placeholder="john.doe@cheltenham.cc" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="directoryAccessPhone">Your Phone Number:</label>
+						<div class="controls">
+							<input type="tel" id="directoryAccessPhone" placeholder="(937) 555-5555" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="directoryAccessAddress">Your Full Mailing Address:</label>
+						<div class="controls">
+							<textarea rows="4" id="directoryAccessAddress" required></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="directoryAccessEmail">Your Email:</label>
-				<div class="controls">
-					<input type="email" id="directoryAccessEmail" placeholder="john.doe@cheltenham.cc" required>
+			<div class="modal-footer">
+				<div id="directoryAccessRequestError" class="hide alert alert-error text-center"></div>
+				<div id="directoryAccessRequestSuccess" class="hide alert alert-success text-center">
+					Your request has been submitted.
+					<br/>
+					We will contact you shortly with further instructions.
+					<br/>
+					<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetDirectoryAccessRequest();">OK</button>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="directoryAccessPhone">Your Phone Number:</label>
-				<div class="controls">
-					<input type="tel" id="directoryAccessPhone" placeholder="(937) 555-5555" required>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="directoryAccessAddress">Your Full Mailing Address:</label>
-				<div class="controls">
-					<textarea rows="4" id="directoryAccessAddress" required></textarea>
-				</div>
+				<button id="directoryAccessRequestCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button id="directoryAccessRequestSubmitBtn" class="btn btn-primary" onclick="submitDirectoryAccessRequest($('#directoryAccessName').val(), $('#directoryAccessEmail').val(), $('#directoryAccessPhone').val(), $('#directoryAccessAddress').val(), '#directoryAccessRequestError', '#directoryAccessRequestSuccess');">Submit Request</button>
 			</div>
 		</div>
-	</div>
-	<div class="modal-footer">
-		<div id="directoryAccessRequestError" class="hide alert alert-error text-center"></div>
-		<div id="directoryAccessRequestSuccess" class="hide alert alert-success text-center">
-			Your request has been submitted.
-			<br/>
-			We will contact you shortly with further instructions.
-			<br/>
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="resetDirectoryAccessRequest();">OK</button>
-		</div>
-		<button id="directoryAccessRequestCancelBtn" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		<button id="directoryAccessRequestSubmitBtn" class="btn btn-primary" onclick="submitDirectoryAccessRequest($('#directoryAccessName').val(), $('#directoryAccessEmail').val(), $('#directoryAccessPhone').val(), $('#directoryAccessAddress').val(), '#directoryAccessRequestError', '#directoryAccessRequestSuccess');">Submit Request</button>
 	</div>
 </div>
