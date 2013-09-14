@@ -64,29 +64,29 @@
 			</div>
 			<div class="modal-body">
 				<div class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="recommendLinkName">Your Name:</label>
-						<div class="controls">
-							<input type="text" id="recommendLinkName" placeholder="John Doe" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendLinkName">Your Name:</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="recommendLinkName" placeholder="John Doe" >
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="recommendLinkEmail">Your Email:</label>
-						<div class="controls">
-							<input type="email" id="recommendLinkEmail" placeholder="john.doe@cheltenham.cc" required>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendLinkEmail">Your Email:</label>
+						<div class="col-xs-5">
+							<input type="email" class="form-control" id="recommendLinkEmail" placeholder="john.doe@cheltenham.cc" >
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="recommendLinkRecommendation">Recommendation(s):</label>
-						<div class="controls">
-							<textarea rows="6" id="recommendLinkRecommendation" required></textarea>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="recommendLinkRecommendation">Recommendation(s):</label>
+						<div class="col-xs-7">
+							<textarea rows="6" class="form-control" id="recommendLinkRecommendation"></textarea>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<div id="recommendLinkError" class="hide alert alert-error text-center"></div>
-				<div id="recommendLinkSuccess" class="hide alert alert-success text-center">
+				<div id="recommendLinkError" class="alert-hidden alert alert-danger text-center"></div>
+				<div id="recommendLinkSuccess" class="alert-hidden alert alert-success text-center">
 					Your recommendation has been submitted.
 					<br/>
 					We will let you know when the page has been updated.
